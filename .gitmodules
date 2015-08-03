@@ -1,0 +1,3 @@
+[submodule "sipXphones"]
+	path = sipXphones
+	url = https://github.com/sipfoundrydev/sipXphones
