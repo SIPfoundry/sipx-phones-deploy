@@ -1,4 +1,4 @@
-PROJECTVER=15.06-stage
+PROJECTVER=2016.02-stage
 DISTRO=x86_64
 REPOHOST = stage.sipfoundry.org
 REPOUSER = stage
@@ -14,9 +14,10 @@ RM_PARAMS = ${REPOUSER}@${REPOHOST} rm -rf ${REPOPATH}/*
 CONTAINER = sipfoundrydev/sipx-docker-config-libs:latest
 
 MODULES = \
-	sipXcisco \
+	sipXaudiocodes \
+	sipXcounterpath \
+	sipXgrandstream \
 	sipXpolycom \
-	sipXsnom \
 	sipXyealink
 
 all: rpm
@@ -73,17 +74,17 @@ prepare-repo:
 	rm -f /etc/yum.repos.d/sipx*; \
 	echo "[sipx-baselibs]" >> /etc/yum.repos.d/sipxecs.repo; \
 	echo "name=sipXecs custom packages for CentOS releasever - basearch" >> /etc/yum.repos.d/sipxecs.repo; \
-	echo "baseurl=file:///WWWROOT/sipxecs/15.06-stage/externals/CentOS_6/x86_64" >> /etc/yum.repos.d/sipxecs.repo; \
+	echo "baseurl=file:///WWWROOT/sipxecs/2016.02-stage/externals/CentOS_6/x86_64" >> /etc/yum.repos.d/sipxecs.repo; \
 	echo "gpgcheck=0" >> /etc/yum.repos.d/sipxecs.repo; \
 	echo "" >> /etc/yum.repos.d/sipxecs.repo; \
 	echo "[sipx-router]" >> /etc/yum.repos.d/sipxecs.repo; \
 	echo "name=sipXecs custom packages for CentOS releasever - basearch" >> /etc/yum.repos.d/sipxecs.repo; \
-	echo "baseurl=file:///WWWROOT/sipxecs/15.06-stage/router/CentOS_6/x86_64" >> /etc/yum.repos.d/sipxecs.repo; \
+	echo "baseurl=file:///WWWROOT/sipxecs/2016.02-stage/router/CentOS_6/x86_64" >> /etc/yum.repos.d/sipxecs.repo; \
 	echo "gpgcheck=0" >> /etc/yum.repos.d/sipxecs.repo; \
 	echo "" >> /etc/yum.repos.d/sipxecs.repo; \
 	echo "[sipx-config]" >> /etc/yum.repos.d/sipxecs.repo; \
 	echo "name=sipXecs custom packages for CentOS releasever - basearch" >> /etc/yum.repos.d/sipxecs.repo; \
-	echo "baseurl=file:///WWWROOT/sipxecs/15.06-stage/config/CentOS_6/x86_64" >> /etc/yum.repos.d/sipxecs.repo; \
+	echo "baseurl=file:///WWWROOT/sipxecs/2016.02-stage/config/CentOS_6/x86_64" >> /etc/yum.repos.d/sipxecs.repo; \
 	echo "gpgcheck=0" >> /etc/yum.repos.d/sipxecs.repo; \
 	echo "" >> /etc/yum.repos.d/sipxecs.repo;
                         
